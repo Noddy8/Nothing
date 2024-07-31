@@ -6,6 +6,10 @@
 <body>
     {% csrf_token %}
     <h2>Welcome, {{ user.username }}!</h2>
+    <form action="/logout/" method="post">
+        {% csrf_token %}
+        <button type="submit">logout</button>
+    </form>
 
 </body>
 </html>
