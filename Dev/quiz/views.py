@@ -13,7 +13,7 @@ def signup_view(request):
             return redirect('home_page')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'signup_page.html', {'form': form})
+    return render(request, 'HTML/register.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def login_view(request):
             return redirect('home_page')
     else:
         form = CustomAuthenticationForm()
-    return render(request, 'login_page.html', {'form': form})
+    return render(request, 'HTML/login.html', {'form': form})
 
 def logout_view(request):
     if request.method == 'POST':
