@@ -37,7 +37,7 @@ def home_view(request):
 
 @csrf_exempt
 def landing_view(request):
-    return render(request, 'landing_page.html')
+    return render(request, 'HTML/index.html')
 
 # def error_view(request):
 #     return render(request , 'error.html')
