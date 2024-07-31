@@ -7,10 +7,12 @@
     <h2>Login</h2>
     <form method="POST">
         {% csrf_token %}
-        <!-- {{ form.as_p }} -->
+        <label>username</label><br>
         {{ form.username }}
         <br>
+        <label>password</label><br>
         {{ form.password }}
+        <br>
         <br>
         <button type="submit">Login</button>
     </form>
