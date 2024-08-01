@@ -35,6 +35,10 @@ def logout_view(request):
 def home_view(request):
     return render(request, 'home_page.html')
 
+@login_required
+def profile_view(request):
+    return render(request , 'HTML/profile_page.html')
+
 @csrf_exempt
 def landing_view(request):
     return render(request, 'HTML/index.html')
