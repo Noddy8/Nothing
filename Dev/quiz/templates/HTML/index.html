@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QuizBOT</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static "/css/style.css" %}" >
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -15,7 +16,7 @@
       <!-- --------------------------------------------------- -->
       <div class="navbar">
         <div class="left">
-          <img src="/images/new-logo-green.png" />
+          <img src="{% static "/images/new-logo-green.png" %}" />
         </div>
         <div class="center">
           <a href="">About</a>
@@ -23,8 +24,8 @@
           <a href="">Feedback</a>
         </div>
         <div class="right">
-          <a href="/HTML/login.html">Log in</a>
-          <a href="/HTML/register.html">Sign up</a>
+          <a href="/login/">Log in</a>
+          <a href="/signup/">Sign up</a>
         </div>
 
         <div class="mobile-nav-icon">
@@ -40,8 +41,8 @@
           <a href="">Feedback</a>
         </div>
         <div class="mobileBtns">
-          <a href="/HTML/login.html">Log in</a>
-          <a href="/HTML/register.html">Sign up</a>
+          <a href="/login/">Log in</a>
+          <a href="/signup/">Sign up</a>
         </div>
       </div>
 
@@ -78,7 +79,7 @@
       </div>
     </div>
 
-    <script src="/JavaScript/script.js"></script>
+    <script src="{% static "/JavaScript/script.js" %}"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
   </body>
 </html>
