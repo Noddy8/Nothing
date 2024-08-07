@@ -21,7 +21,9 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('home_page')
+            # return redirect('home_page')
+            next_url = request.GET.get('next', 'home_page')
+            return redirect(next_url)
     else:
         form = CustomAuthenticationForm()
     return render(request, 'HTML/login.html', {'form': form})
