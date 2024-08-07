@@ -48,3 +48,8 @@ def landing_view(request):
 
 def error(request, reason=""):
     return render(request, "error.html", {"reason": reason})
+
+
+@login_required
+def create_quiz_view(request):
+    return render(request , "HTML/create_quiz.html")

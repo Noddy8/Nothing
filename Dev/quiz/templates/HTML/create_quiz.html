@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load static %}
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="/css/custom-quiz.css" />
+    <link rel="stylesheet" href="{% static "/css/custom-quiz.css" %}" />
   </head>
   <body>
     <div class="container">
@@ -21,6 +22,6 @@
         <button type="submit">Submit Quiz</button>
       </form>
     </div>
-    <script src="/JavaScript/custom-quiz.js"></script>
+    <script src="{% static "/JavaScript/custom-quiz.js" %}"></script>
   </body>
 </html>
