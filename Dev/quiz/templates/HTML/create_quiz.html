@@ -15,7 +15,8 @@
   <body>
     <div class="container">
       <h1>Create Quiz by QuizBOT</h1>
-      <form id="quizForm">
+      <form id="quizForm" method="post" action="/get-quiz">
+        {% csrf_token %}
         <div id="questionsContainer">
           <!-- Questions will be added dynamically here -->
         </div>

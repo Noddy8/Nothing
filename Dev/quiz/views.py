@@ -3,6 +3,9 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from .forms import CustomUserCreationForm, CustomAuthenticationForm
+from django.http import JsonResponse
+import json
+from .models import Quiz , Question
 
 def signup_view(request):
     if request.method == 'POST':
@@ -54,4 +57,27 @@ def error(request, reason=""):
 
 @login_required
 def create_quiz_view(request):
-    return render(request , "HTML/create_quiz.html")
+    return render(request , "HTML/quiz-2.html")
+
+@csrf_exempt
+def submit_quiz_view(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        print(data)
+
+
+        context = {
+            'data' : data
+        }
+
+        return JsonResponse({
+            'data' : data
+        })
+    
+        # return render(request , "HTML/try.html" , context , 200)
+
+        # return JsonResponse({"status": "success", "message": data})
+        # return request.body
+
+    else:
+        return JsonResponse({"status": "error", "message": "Invalid request method."})

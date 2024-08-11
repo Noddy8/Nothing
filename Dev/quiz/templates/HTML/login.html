@@ -14,10 +14,20 @@
         {% csrf_token %}
         <!-- <input type="text" placeholder="Username" name="{{ form.username }}"  required /> -->
         <input type="text"  name="{{ form.username.name }}"  placeholder="Username" required />
-        {{ form.username.errors }}
         <!-- {{ form.username }} -->
         <input type="password" name="{{ form.password.name }}"  placeholder="Password" required />
-        {{ form.password.errors }}
+
+        {% if form.errors %}
+          <div class="errors">
+                  {% for field, errors in form.errors.items %}
+                      {% for error in errors %}
+                          <!-- <p>{{ error }}</p> -->
+                           <p>Username or Password is incorrect</p>
+                      {% endfor %}
+                  {% endfor %}
+          </div>
+      {% endif %}
+
         <input type="submit" value="Login" />
         <span
           >Don't have an Account?
